@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Marshall's website
+  </title>
+  <style>
+    @keyframes pin {
+      0% {
+        background-color: red;
+        left: 50%;
+        top: 12%;
+      }
+
+      25% {
+        background-color: yellow;
+        left: 55%;
+        top: 12%;
+      }
+
+      50% {
+        background-color: blue;
+        left: 50%;
+        top: 12%;
+      }
+
+      75% {
+        background-color: green;
+        left: 55%;
+        top: 12%;
+      }
+
+      100% {
+        background-color: red;
+        left: 50%;
+        top: 12%;
+      }
+    }
+
+
+
+
+    @keyframes wheelHueColor {
+
+      from,
+      to {
+        color: rgb(0, 0, 0);
+      }
+
+      10% {
+        color: rgb(1, 33, 51);
+      }
+
+      20% {
+        color: rgb(20, 103, 170)
+      }
+
+      30% {
+        color: rgb(180, 225, 255);
+      }
+
+      40% {
+        color: rgb(7, 70, 112);
+      }
+
+      50% {
+        color: rgb(3, 201, 169);
+      }
+
+      60% {
+        color: rgb(22, 160, 133);
+        
+      }
+
+      70% {
+        color: rgb(1, 217, 255);
+      }
+
+      80% {
+        color: rgb(243, 156, 18);
+      }
+
+      90% {
+        color: rgb(236, 240, 241);
+        transform: rotate(360deg);
+   
+      }
+     
+    }
+
+    .example {
+      color: rgb(236, 100, 75);
+      animation: wheelHueColor 7s infinite;
+      text-align: center;
+      font-size: 152%;
+      margin-top: 50vh;
+      transform: translateY(-50%);
+      padding-bottom: 100%;
+    }
+
+    body {
+      background-color: rgb(189, 195, 199);
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .square {
+      height: 70px;
+      width: 100%;
+      background-color: rgb(94, 140, 151);
+      margin-bottom: .90%;
+
+    }
+
+    .space {
+      position: absolute;
+      width: 38%;
+      height: 54%;
+      text-align: center;
+      color: white;
+      background-color: rgb(7, 50, 61);
+      margin-bottom: 65%;
+      margin-left: .5%;
+      margin-top: 1.5%;
+      border-radius: 25px;
+
+
+
+
+      animation-name: pin;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+
+
+
+
+    .tv {
+
+      border-radius: 25px;
+      height: 30%;
+      width: 70%;
+      background-color: rgb(133, 69, 69);
+      margin-left: 20%;
+    }
+
+
+
+    body {
+      background-color: rgb(83, 185, 199);
+    }
+
+
+    img {
+      padding-top: .5%;
+      padding-left: .5%;
+      width: 40%;
+      height: 41%;
+      border-radius: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="square">
+    <a href="https://www.youtube.com/watch?reload=9&v=dO_PL3V1c4Y">portfolio page </a>
+
+  </div>
+
+
+
+  <div class="tv">
+
+    <img src="dumb anime thing.jpg" </img>
+
+    <b class="space">
+
+      <h1 class="example">Marshall Braud <div id="tab"> reading </div>
+        <div id="tab"> video games</div>
+        <div id="tab"> robotics </div>
+      </h1>
+
+
+
+
+    </b>
+
+  </div>
+
+
+
+</body>
+
+</html>
