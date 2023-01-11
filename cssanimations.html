@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>animation</title>
+</head>
+
+<body>
+  <title>
+  </title>
+  <style>
+    @keyframes Big {
+
+
+      10% {
+        left: 30%;
+        top: 50%;
+      }
+      15% {
+        left: 30%;
+        top: 50%;
+      }
+      20% {
+        left: 40%;
+        top: 60%;
+      }
+      25% {
+        left: 40%;
+        top: 60%;
+      }
+      30% {
+        left: 40%;
+        top: 60%;
+     
+      }
+      35% {
+        left: 40%;
+        top: 60%;
+        transform: rotate(0deg);
+      }
+
+      40% {
+        left: 40%;
+        top: 25%;
+
+      }
+      45% {
+        left: 40%;
+        top: 25%;
+
+      }
+      50% {
+        left: 40%;
+        top: 25%;
+
+      }
+      55% {
+        left: 40%;
+        top: 25%;
+
+      }
+      60% {
+        left: 40%;
+        top: 25%;
+
+      }
+      65% {
+        left: 40%;
+        top: 25%;
+
+      }
+      70% {
+        left: 40%;
+        top: 25%;
+      }
+      75% {
+        left: 40%;
+        top: 25%;
+        transform: rotate(-90);
+      }
+      80% {
+
+      
+      }
+      85% {
+
+    
+      }
+      90% {
+
+      }
+      95% {
+ 
+      }
+      99% {
+        left: -10%;
+        top: 40%;
+        top: 34%;
+        transform: rotate(5);
+      }
+
+      100% {
+        left: -0%;
+        top: 40%;
+        transform: rotate(-360deg);
+      }
+    }
+
+    @keyframes wall {
+
+
+      10% {
+        top: -56%;
+        left: 60%;
+      }
+
+      20% {
+        top: -56%;
+        left: 60%;
+      }
+
+      30% {
+        top: -56%;
+        left: 60%;
+      }
+
+      40% {
+        top: -56%;
+        left: 60%;
+      }
+
+      50% {
+        top: -56%;
+        left: 60%;
+      }
+
+      60% {
+         top: 26%;
+        left: 60%;
+      }
+
+      70% {
+        top: 26%;
+        left: 60%;
+      }
+      80% {
+        top: 26%;
+        left: 60%;
+      }
+      90% {
+        top: 26%;
+        left: 60%;
+      }
+      99% {
+
+    
+    
+      }
+      100% {
+        top: 34%;
+        left: 60%;
+      }
+
+
+    }
+
+    #box {
+      width: 90px;
+      height: 460px;
+      position: absolute;
+      background: rgb(87, 86, 86);
+      top: -56%;
+      left: 60%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      position: absolute;
+      animation-name: wall;
+      animation-duration: 10s;
+    }
+
+
+
+
+    #Birds {
+      top: 56%;
+      left: -20%;
+      position: absolute;
+      width: 300px;
+      animation-name: Big;
+      animation-duration: 10s;
+      border-radius: 500px;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+    }
+
+    body {
+      background: url(https://wallpapercave.com/dwp1x/LqUuvjP.jpg);
+      background-size: cover;
+    }
+  </style>
+  <img id="Birds" src="DoDo.png">
+  <div id=box>
+
+
+
+
+  </div>
+
+</body>
+
+</html>

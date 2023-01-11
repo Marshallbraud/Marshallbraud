@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Box</title>
+  <style>
+    #box {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+
+      background: rgb(255, 0, 0);
+    }
+  </style>
+
+
+</head>
+
+
+
+<body>
+  <div id=box>
+    <a href="https://www.youtube.com/watch?v=sc-RsWxkV1o">p</a>
+
+
+
+  </div>
+
+
+
+
+</body>
+
+</html>
+<script>
+  var speedx = 100
+  var speedy = 150
+
+  var x = 100
+  var y = 100
+  setInterval(movebox, 50)
+  document.getElementById("box").style.left = x + "px"
+  docent.getElementById("box").style.top = y + "px"
+
+  function movebox() {
+    x = x + speedx
+    document.getElementById("box").style.left = x + "px"
+    if (x <= 1000) {
+      speedx = speedx * -1
+
+    } if (x >= 0) {
+      speedx = speedx * -1
+
+    }
+     y= y + speedy
+    document.getElementById("box").style.top = y + "px"
+    if (y <= 1500) {
+      speedy = speedy * -1
+
+    } if (y >= 0) {
+      speedy = speedy * -1
+
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Money clicker0</title>
+  <style>
+    body {
+      background-image: url("http://www.bloomadvisors.com/wp-content/uploads/2022/03/money.jpg");
+      background-color: #cccccc;
+
+
+    }
+    #coin3 {
+      padding-top: 5%;
+      padding-left: 5%;
+      width: 20%;
+
+      border-radius: 500px;
+    }
+    #coin2 {
+      padding-top: 5%;
+      padding-left: 5%;
+      width: 20%;
+
+      border-radius: 500px;
+    }
+#zoom {
+  color: rgb(112, 122, 250);
+  width: 38%;
+      font-size: 500%;
+}
+
+    #coin {
+      padding-top: .5%;
+      padding-left: .5%;
+      width: 20%;
+
+      border-radius: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="zoom">
+   <b> 0 coins </b>
+
+  </div>
+
+
+  <img id="coin" src="download.png">
+
+
+
+  <img id="coin2" src="abc.png">
+
+  <img id="coin3" src="no.png">
+
+
+
+
+  <script>
+    var score = 0
+    var scoreperclick = 1
+
+    document.getElementById("coin2").addEventListener("click", upgrade)
+    document.getElementById("coin").addEventListener("click", clickhandeler)
+    document.getElementById("coin3").addEventListener("click", autoclicker)
+
+
+    function clickhandeler() {
+      score = score + scoreperclick
+      
+      document.getElementById("zoom").innerText = score + " coin"
+    
+    }
+    function upgrade() {
+      scoreperclick = 2
+      score = scoreperclick * 2
+    }
+
+    
+
+function autoclicker() {}
+  
+      function upgrade() {
+        if(score>=5){
+        score=score-5
+        scoreperclick=2
+        }}
+
+  </script>
