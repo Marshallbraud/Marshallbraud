@@ -27,37 +27,3 @@ width: 20%;
   <img id="car2" src="Capture.PNG">  
 </body>
 </html>
-<script>
-  var car1 = 11
-  var car2 = 11
-
-
-  document.addEventListener("keydown", keyhandler) 
-
-function keyhandler(e) {
-  document.getElementById("car2").style.left = car2 + "px"
-  document.getElementById("car1").style.left = car1 + "px"
- console.log(e.key)
-if (e.key === "Escape")
- {
-   
-  car1 = car1 * 1.09         
-    
- }
- if (e.key === "Home")
- {
-   
-  car2 = car2 + 4
-    
- }
-
-
-
-
-
-    }
-
-  
-
-
-</script>

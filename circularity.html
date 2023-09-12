@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+    <title> I don't know</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="900" height="900"></canvas>
+</body>
+
+</html>
+<script> var canvas = document.getElementById("canvas")
+    var ctx = canvas.getContext("2d")
+    var x = []
+    var y = []
+    var speedx = []
+    var speedy = []
+
+    setInterval(main, 30)
+    function draw() {
+        ctx.clearRect(0, 0, 2500, 2500)
+        for (var i = 0; i < 20; i = i + 1) {
+            y[i] = math.floor(math.random() * 700)
+            x[i] = math.floor(math.random() * 700)
+
+            speedy[i] = math.random()
+            speedx[i] = math.random()
+
+            x[i] = x[i] + speedx
+            y[i] = y[i] + speedy
+            if (x[i] >= 700) {
+                speedx[i] = -1 * speedx[i]
+            }
+
+
+            if (x[i] <= 10) {
+                speedx[i] = -1 * speedx[i]
+            }
+
+            if (y[i] >= 700) {
+                speedy[i] = -1 * speedy[i]
+
+            }
+
+            if (y[i] <= 10) {
+                speedy[i] = -1 * speedy[i]
+            }
+
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> ctx.fillRect(x, y, 10, 10)

@@ -1,0 +1,116 @@
+<html>
+
+<head>
+
+    <title> I don't know</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="900" height="900"></canvas>
+
+</body>
+
+</html>
+<script> var canvas = document.getElementById("canvas")
+    var ctx = canvas.getContext("2d")
+    document.addEventListener("mousemove", bob)
+    var enemyX = []
+    var enemyY = []
+    var enemySpeedx = []
+    var enemySpeedy = []
+    var enemyRadius = []
+    var mousex = 100
+    var mousey = 100
+    var alive = "yes"
+    var mouseRadius = 10
+    for (var i = 1; i < 500; i = i + 1) {
+        enemyX.push(Math.random() * 1 + 50)
+        enemyY.push(Math.random() * 700)
+        enemySpeedx[i] = Math.random() * 10 + 5
+        enemySpeedy[i] = Math.random() * 10 - 5
+        enemyRadius[i] = Math.random() * 10 + 5
+    }
+    setInterval(main, 30)
+    function main() {
+
+
+        ctx.clearRect(0, 0, 2500, 2500)
+        ctx.beginPath()
+        ctx.arc(mousex, mousey, mouseRadius, 0, 7)
+        ctx.fill()
+        for (var i = 0; i < 50; i = i + 1) {
+            enemyX[i] = enemyX[i] + enemySpeedx[i]
+            enemyY[i] = enemyY[i] + enemySpeedy[i]
+            var distance = Math.sqrt(Math.pow(mousex - enemyX[i], 2) + Math.pow(mousey - enemyY[i], 2))
+            if ((enemyRadius[i] + mouseRadius) >= distance) {
+                if (alive === "yes") {
+                    if (enemyRadius[i] < mouseRadius) {
+
+
+                        enemySpeedx[i] = Math.random() * 10 + 5
+                        enemySpeedy[i] = Math.random() * 10 - 5
+                        enemyRadius[i] = Math.random() * 10 + 5
+                        enemyX[i] = Math.random() * 10 + 50
+                        enemyY[i] = Math.random() * 700
+                        mouseRadius = mouseRadius + 1
+                    } if (enemyRadius[i] > mouseRadius) {
+                        alive = "no"
+
+                    }
+                }
+            }
+                ctx.beginPath()
+                ctx.arc(enemyX[i], enemyY[i], enemyRadius[i], 0, Math.PI * 2)
+                ctx.fill()
+
+
+                if (enemyY[i] > 500) {
+                    enemySpeedx[i] = Math.random() * 10 + 5
+                    enemySpeedy[i] = Math.random() * 10 - 5
+                    enemyRadius[i] = Math.random() * 10 + 5
+                    enemyX[i] = Math.random() * 10 + 50
+                    enemyY[i] = Math.random() * 700
+
+                }
+                if (enemyX[i] > 500) {
+                    enemySpeedx[i] = Math.random() * 10 + 5
+                    enemySpeedy[i] = Math.random() * 10 - 5
+                    enemyRadius[i] = Math.random() * 10 + 5
+                    enemyX[i] = Math.random() * 10 + 50
+                    enemyY[i] = Math.random() * 700
+
+                }
+
+                if (enemyY[i] < -50) {
+                    enemySpeedx[i] = Math.random() * 10 + 5
+                    enemySpeedy[i] = Math.random() * 10 - 5
+                    enemyRadius[i] = Math.random() * 10 + 5
+                    enemyX[i] = Math.random() * 10 + 50
+                    enemyY[i] = Math.random() * 700
+
+                }
+
+            }
+        
+    }
+
+
+    function bob(e) {
+        mousex = e.pageX
+        mousey = e.pageY
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Jhon</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800"></canvas>
+</body>
+</html>
+<script>
+var x = 67
+var y = 127
+var speedy = 5
+var speedx = 5
+var x2 = 167
+var y2 = 127
+var speedy2 = 5
+var speedx2 = 5
+var canvas=document.getElementById("canvas")
+var ctx = canvas.getContext("2d")
+function draw(){
+  ctx.clearRect(0,0,800,800)
+  ctx.fillRect(x,y,50,50)
+  ctx.fillRect(x2,y2,50,50)
+y=y+speedy
+x=x+speedx
+y2=y2+speedy2
+x2=x2+speedx2
+
+if(y<400){
+  speedy =speedy + .50
+}
+if(y>400){
+  speedy =speedy - .50
+}
+if(x<400){
+  speedx =speedx + .50
+}
+if(x>400){
+  speedx =speedx - .50
+}
+
+if(y2<400){
+  speedy2 =speedy2 + .50
+}
+if(y2>400){
+  speedy2 =speedy2 - .50
+}
+if(x2<400){
+  speedx2 =speedx2 + .50
+}
+if(x2>400){
+  speedx2 =speedx2 - .50
+}
+}
+setInterval(draw,16)
+
+
+
+
+
+</script>
