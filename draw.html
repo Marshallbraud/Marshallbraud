@@ -1,0 +1,94 @@
+<html>
+
+<head>
+
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+</body>
+
+</html>
+<script>
+    document.addEventListener("keydown", keydownHandler)
+    var canvas = document.getElementById("canvas")
+
+    var ctx = canvas.getContext("2d")
+    var snakex = 55 * 5
+    var snakey = 55 * 5
+    var blockspace = 10
+    var speed = 200
+    setInterval(main, speed)
+    function keydownHandler(e) {
+        debugger
+        wpressed = false
+        spressed = false
+        apressed = false
+        dpressed = false
+        if (e.key === "s") {
+
+            spressed = true
+        }
+        if (e.key === "w") {
+
+            wpressed = true
+        }
+        if (e.key === "a") {
+
+            apressed = true
+        }
+        if (e.key === "d") {
+
+            dpressed = true
+        }
+
+
+    }
+    function main() {
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
+                ctx.fillStyle = "red"
+              
+            }
+        }
+        ctx.fillStyle = "blue"
+        ctx.fillRect(snakex, snakey, 50, 50)
+        if (spressed === true) {
+            snakey = snakey + 55
+        }
+        if (wpressed === true) {
+            snakey = snakey - 55
+
+        }
+        if (apressed === true) {
+            snakex = snakex - 55
+
+        } if (dpressed === true) {
+            snakex = snakex + 55
+
+        }
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

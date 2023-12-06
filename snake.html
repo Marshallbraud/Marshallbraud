@@ -11,20 +11,139 @@
 
 </html>
 <script>
+    document.addEventListener("keydown", keydownHandler)
     var canvas = document.getElementById("canvas")
-    var x = 10
-    var y = 10
+
     var ctx = canvas.getContext("2d")
-   ctx.fillStyle="red"
-    for (var i = 0; i < 10; i++) {
-        for (var j = 0; j < 10; j++) {
-            ctx.fillRect(i*55, j*55, 50, 50)
+    var snakex = 55 * 5
+    var snakey = 55 * 5
+    var blockspace = 10
+    var speed = 200
+    var dead = false
+    var tailx = [-1,]
+    var taily = [-1,]
+    var x = 1
+    var y = 1
+    var applex = 1
+    var appley = 1
+    var wpressed = false
+    var spressed = false
+    var apressed = false
+    var dpressed = false
+    var rpressed = false
+    setInterval(main, speed)
+    function keydownHandler(e) {
+     rpressed = false
+        wpressed = false
+        spressed = false
+        apressed = false
+        dpressed = false
+        if (e.key === "s") {
+
+            spressed = true
         }
+        if (e.key === "w") {
+
+            wpressed = true
+        }
+        if (e.key === "a") {
+
+            apressed = true
+        }
+        if (e.key === "d") {
+
+            dpressed = true
+        }
+
+
     }
-    ctx.fillStyle="blue"
-    ctx.fillRect(85, 85, 50, 50)
+
+    applex = Math.floor(Math.random() * 10);
+    appley = Math.floor(Math.random() * 10);
+    function main() {
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
+                ctx.fillStyle = "red"
+                ctx.fillRect(i * 55, j * 55, 50, 50)
+
+            }
+        }
+        ;
+        ctx.fillStyle = "purple"
+        ctx.fillRect(applex * 55, appley * 55, 50, 50)
+
+        if (dead === false) {
+            ctx.fillStyle = "blue"
+            ctx.fillRect(snakex, snakey, 50, 50)
+        }
+        if (dead === false) {
+        if (spressed === true) {
+            snakey = snakey + 55
+
+        }
+        if (wpressed === true) {
+            snakey = snakey - 55
+
+        }
+        if (apressed === true) {
+            snakex = snakex - 55
+
+        } if (dpressed === true) {
+            snakex = snakex + 55
+
+        }
+        }
+        tailx.push(snakex)
+        taily.push(snakey)
+        tailx.splice(0, 1)
+        taily.splice(0, 1)
+        for (var i = 0; i < tailx.length; i++) {
+
+            ctx.fillStyle = "blue"
+            ctx.fillRect(tailx[i], taily[i], 50, 50)
+            if (applex * 55 === snakex) {
+                if (appley * 55 === snakey) {
+                    applex = Math.floor(Math.random() * 10);
+                    appley = Math.floor(Math.random() * 10);
+                    taily.push(snakey)
+                    tailx.push(snakex)
+                }
+            }
+
+        }
+
+        if (snakey >= 500) {
+       
+            dead = true
+
+        }
+        if (snakex >= 500) {
+       
+            dead = true
+
+        }
+        if (snakex <= -10) {
+        
+            dead = true
+
+        }
+        if (snakey <= -10) {
+          
+            dead = true
+
+        }
+        if (dead === true) {
+            ctx.fillText("dead", 10, 10)
+            snakex = 0
+            snakey = 0 
+            if (e.key === "r") {
+           rpressed === true
+            snakex = 55 * 5
+            snakey = 55 * 5
+        }
 
 
+    }}
 </script>
 
 

@@ -1,0 +1,125 @@
+<html>
+
+<head>
+
+    <title>Boom Bin</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+</body>
+
+</html>
+<script>
+    // var covered = [
+    //     [true, true, false, true, true],
+    //     [true, true, true, true, true],
+    //     [true, false, true, true, true],
+    //     [true, true, true, true, true],
+    //     [true, true, true, true, true]]
+    var boom = []
+    var covered = []
+    for (i = 0; i < 10; i++) {
+        covered.push([])
+        boom.push([])
+        for (j = 0; j < 10; j++) {
+            covered[i].push(true)
+            boom[i].push(false)
+        }
+    }
+
+
+
+    document.addEventListener("click", clickhandler)
+    for (i = 0; i < 15; i++) {
+        boom[Math.floor(Math.random() * 10)][Math.floor(Math.random() * 10)] = true
+    }
+    var canvas = document.getElementById("canvas")
+    var ctx = canvas.getContext("2d")
+    main()
+    function clickhandler(e) {
+
+        var mousex = e.offsetX
+        var mousey = e.offsetY
+        mousex = (mousex - (mousex % 55)) / 55
+
+        mousey = (mousey - (mousey % 55)) / 55
+
+        mousex = mousex
+        covered[mousex][mousey] = false
+        main()
+        boomCheck(mousex, mousey)
+
+    }
+
+    function main() {
+
+        for (var i = 0; i < covered.length; i++) {
+            for (var j = 0; j < covered[i].length; j++) {
+
+                if (covered[i][j] === false) {
+                    ctx.fillStyle = "purple"
+                } else {
+                    if (boom[i][j] === false) {
+                        ctx.fillStyle = "green"
+                    } else {
+                        ctx.fillStyle = "black"
+                    }
+                }
+
+                ctx.fillRect(i * 55, j * 55, 50, 50)
+            }
+        }
+    }
+    function boomCheck(mousex, mousey) {
+      
+        var num = 0
+       
+        if (boom[mousex + 1][mousey] === true) {
+            num = 1 + num
+        }
+        if (boom[mousex+1][mousey+1] === true) {
+           
+            num = 1 + num
+        } if (boom[mousex+1][mousey-1] === true) {
+            num = 1 + num
+        } if (boom[mousex-1][mousey+1] === true) {
+            num = 1 + num
+        } if (boom[mousex-1][mousey-1] === true) {
+            num = 1 + num
+        } if (boom[mousex-1][mousey] === true) {
+            num = 1 + num
+        } if (boom[mousex][mousey+1] === true) {
+            num = 1 + num
+        } if (boom[mousex][mousey-1] === true) {
+            num = 1 + num
+        }
+
+
+ctx.font = "30px Arial";
+ctx.fillText(num, x, y);
+    }
+
+
+
+</script>
+
+
+</body>
+
+</html>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
